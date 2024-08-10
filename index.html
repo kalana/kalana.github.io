@@ -1,1 +1,165 @@
-Hello! I'm Kalana Wijethunga
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalana Wijethunga | Software Architect</title>
+  <meta name="description" content="Placeholder description for Kalana Wijethunga, Software Architect.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1f;
+      --muted: #6b6b76;
+      --accent: #3b5bdb;
+      --card: #f4f5f8;
+      --border: #e3e4ea;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1014;
+        --fg: #ececf1;
+        --muted: #9a9aa6;
+        --accent: #7c93ff;
+        --card: #181a21;
+        --border: #272a33;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+    header.nav {
+      position: sticky; top: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+    header.nav .wrap {
+      display: flex; justify-content: space-between; align-items: center;
+      height: 56px;
+    }
+    .brand { font-weight: 700; color: var(--fg); }
+    nav a { margin-left: 20px; color: var(--muted); font-size: 0.95rem; }
+    nav a:hover { color: var(--fg); text-decoration: none; }
+
+    .hero { padding: 96px 0 72px; }
+    .avatar {
+      width: 112px; height: 112px; border-radius: 50%;
+      background: var(--card); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 0.8rem; margin-bottom: 24px;
+    }
+    .hero h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 0 0 4px; line-height: 1.15; }
+    .hero .title { font-size: 1.25rem; color: var(--accent); margin: 0 0 16px; font-weight: 600; }
+    .hero p { color: var(--muted); max-width: 560px; margin: 0 0 28px; }
+    .btn {
+      display: inline-block; padding: 10px 20px; border-radius: 8px;
+      background: var(--accent); color: var(--bg); font-weight: 600; margin-right: 10px;
+    }
+    .btn.ghost { background: transparent; color: var(--fg); border: 1px solid var(--border); }
+    .btn:hover { text-decoration: none; opacity: 0.9; }
+
+    section { padding: 56px 0; border-top: 1px solid var(--border); }
+    section h2 { font-size: 1.5rem; margin: 0 0 24px; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tags span {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 4px 12px; border-radius: 999px; font-size: 0.9rem;
+    }
+    .job { margin-bottom: 24px; }
+    .job .meta { color: var(--muted); font-size: 0.9rem; }
+
+    footer { padding: 32px 0 48px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top">Kalana Wijethunga</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap">
+      <div class="hero">
+        <div class="avatar">Photo</div>
+        <h1>Kalana Wijethunga</h1>
+        <p class="title">Software Architect</p>
+        <p>Placeholder tagline. A short one or two sentence statement about what you do and the value you bring.</p>
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="#projects">View work</a>
+      </div>
+
+      <section id="about">
+        <h2>About</h2>
+        <p>Placeholder paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Placeholder paragraph. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="job">
+          <h3>Job Title, Company Name</h3>
+          <div class="meta">Year – Year</div>
+          <p>Placeholder description of responsibilities and achievements.</p>
+        </div>
+        <div class="job">
+          <h3>Job Title, Company Name</h3>
+          <div class="meta">Year – Year</div>
+          <p>Placeholder description of responsibilities and achievements.</p>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid">
+          <div class="card"><h3>Project One</h3><p>Placeholder project description.</p></div>
+          <div class="card"><h3>Project Two</h3><p>Placeholder project description.</p></div>
+          <div class="card"><h3>Project Three</h3><p>Placeholder project description.</p></div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="tags">
+          <span>Skill One</span><span>Skill Two</span><span>Skill Three</span>
+          <span>Skill Four</span><span>Skill Five</span><span>Skill Six</span>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Placeholder call to action. <a href="mailto:you@example.com">you@example.com</a></p>
+        <p><a href="#">LinkedIn</a> · <a href="#">GitHub</a> · <a href="#">X</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Kalana Wijethunga. All rights reserved.</div>
+  </footer>
+</body>
+</html>
