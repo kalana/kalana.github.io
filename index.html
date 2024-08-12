@@ -4,25 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kalana Wijethunga | Software Architect</title>
-  <meta name="description" content="Placeholder description for Kalana Wijethunga, Software Architect.">
+  <meta name="description" content="Placeholder profile for Kalana Wijethunga, Software Architect.">
   <style>
     :root {
-      --bg: #ffffff;
-      --fg: #1a1a1f;
-      --muted: #6b6b76;
-      --accent: #3b5bdb;
-      --card: #f4f5f8;
-      --border: #e3e4ea;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f1014;
-        --fg: #ececf1;
-        --muted: #9a9aa6;
-        --accent: #7c93ff;
-        --card: #181a21;
-        --border: #272a33;
-      }
+      --bg: #f9fafb;
+      --surface: #ffffff;
+      --fg: #111827;
+      --muted: #6b7280;
+      --accent: #3b82f6;
+      --border: #e5e7eb;
+      --tag-bg: #f3f4f6;
+      --tag-fg: #c7254e;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.04);
+      --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -30,136 +24,217 @@
       margin: 0;
       background: var(--bg);
       color: var(--fg);
-      font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+      font-family: var(--serif);
       line-height: 1.6;
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+    .container { max-width: 1024px; margin: 0 auto; padding: 0 16px; }
 
-    header.nav {
-      position: sticky; top: 0;
-      background: var(--bg);
+    /* Header */
+    header.site {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--surface);
       border-bottom: 1px solid var(--border);
-      z-index: 10;
     }
-    header.nav .wrap {
+    header.site .container {
       display: flex; justify-content: space-between; align-items: center;
-      height: 56px;
+      height: 64px; flex-wrap: wrap;
     }
-    .brand { font-weight: 700; color: var(--fg); }
-    nav a { margin-left: 20px; color: var(--muted); font-size: 0.95rem; }
-    nav a:hover { color: var(--fg); text-decoration: none; }
+    .logo { font-weight: 700; color: var(--fg); font-size: 1.15rem; }
+    .logo:hover { text-decoration: none; }
+    nav.main a {
+      margin-left: 24px; color: var(--muted); font-size: 0.95rem;
+    }
+    nav.main a:hover { color: var(--fg); text-decoration: none; }
 
-    .hero { padding: 96px 0 72px; }
-    .avatar {
-      width: 112px; height: 112px; border-radius: 50%;
+    /* Hero */
+    .hero {
+      padding: 64px 0 48px;
+      display: grid; gap: 32px;
+      grid-template-columns: 1fr;
+      align-items: center;
+    }
+    .hero-photo {
+      width: 200px; height: 200px; border-radius: 16px;
       object-fit: cover; object-position: center top;
-      background: var(--card); border: 1px solid var(--border);
-      display: block; margin-bottom: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
     }
-    .hero h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 0 0 4px; line-height: 1.15; }
-    .hero .title { font-size: 1.25rem; color: var(--accent); margin: 0 0 16px; font-weight: 600; }
-    .hero p { color: var(--muted); max-width: 560px; margin: 0 0 28px; }
-    .btn {
-      display: inline-block; padding: 10px 20px; border-radius: 8px;
-      background: var(--accent); color: var(--bg); font-weight: 600; margin-right: 10px;
+    .hero h1 { font-size: clamp(2rem, 5vw, 2.75rem); margin: 0 0 8px; line-height: 1.15; }
+    .hero .role { color: var(--accent); font-weight: 600; font-size: 1.15rem; margin: 0 0 16px; }
+    .hero p.bio { color: var(--muted); max-width: 560px; margin: 0 0 20px; }
+    .socials { display: flex; gap: 16px; font-size: 0.95rem; }
+    .socials a { color: var(--muted); }
+    .socials a:hover { color: var(--accent); }
+    @media (min-width: 768px) {
+      .hero { grid-template-columns: 1fr 220px; }
+      .hero-photo { order: 2; justify-self: end; }
     }
-    .btn.ghost { background: transparent; color: var(--fg); border: 1px solid var(--border); }
-    .btn:hover { text-decoration: none; opacity: 0.9; }
 
-    section { padding: 56px 0; border-top: 1px solid var(--border); }
-    section h2 { font-size: 1.5rem; margin: 0 0 24px; }
-    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    /* Sections */
+    section { padding: 48px 0; }
+    section > .container > h2 {
+      font-size: 1.6rem; margin: 0 0 24px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    }
+
+    /* Cards */
     .card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 12px; padding: 20px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px; box-shadow: var(--shadow);
+      margin-bottom: 16px;
     }
-    .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
-    .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .tags span {
-      background: var(--card); border: 1px solid var(--border);
-      padding: 4px 12px; border-radius: 999px; font-size: 0.9rem;
-    }
-    .job { margin-bottom: 24px; }
-    .job .meta { color: var(--muted); font-size: 0.9rem; }
+    .card h3 { margin: 0 0 4px; font-size: 1.15rem; }
+    .card .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
+    .card p { margin: 0 0 12px; color: var(--muted); }
+    .card ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .card ul li { margin-bottom: 4px; }
 
-    footer { padding: 32px 0 48px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
+    .project-grid {
+      display: grid; gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .project-thumb {
+      height: 160px; border-radius: 8px; background: var(--tag-bg);
+      border: 1px dashed var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 0.85rem; margin-bottom: 16px;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .tags span {
+      background: var(--tag-bg); color: var(--tag-fg);
+      padding: 2px 10px; border-radius: 6px; font-size: 0.8rem;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+    }
+    .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+    .btn {
+      display: inline-block; padding: 8px 16px; border-radius: 8px;
+      font-size: 0.9rem; font-weight: 600;
+      background: var(--accent); color: #fff;
+    }
+    .btn:hover { text-decoration: none; opacity: 0.9; }
+    .btn.outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+
+    /* Footer */
+    footer.site {
+      background: var(--surface); border-top: 1px solid var(--border);
+      padding: 24px 0; color: var(--muted); font-size: 0.9rem;
+    }
+    footer.site .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
   </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="wrap">
-      <a class="brand" href="#top">Kalana Wijethunga</a>
-      <nav>
-        <a href="#about">About</a>
+  <header class="site">
+    <div class="container">
+      <a class="logo" href="#top">Kalana Wijethunga</a>
+      <nav class="main">
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="#education">Education</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
-    <div class="wrap">
+    <div class="container">
       <div class="hero">
-        <img class="avatar" src="assets/profile.jpg" alt="Kalana Wijethunga">
-        <h1>Kalana Wijethunga</h1>
-        <p class="title">Software Architect</p>
-        <p>Placeholder tagline. A short one or two sentence statement about what you do and the value you bring.</p>
-        <a class="btn" href="#contact">Get in touch</a>
-        <a class="btn ghost" href="#projects">View work</a>
+        <div>
+          <h1>Hi, I'm Kalana Wijethunga</h1>
+          <p class="role">Software Architect</p>
+          <p class="bio">Placeholder introduction. A short paragraph describing your background, what you build, and the kinds of problems you enjoy solving.</p>
+          <div class="socials">
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+            <a href="mailto:you@example.com">Email</a>
+          </div>
+        </div>
+        <img class="hero-photo" src="assets/profile.jpg" alt="Kalana Wijethunga">
       </div>
-
-      <section id="about">
-        <h2>About</h2>
-        <p>Placeholder paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Placeholder paragraph. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </section>
-
-      <section id="experience">
-        <h2>Experience</h2>
-        <div class="job">
-          <h3>Job Title, Company Name</h3>
-          <div class="meta">Year – Year</div>
-          <p>Placeholder description of responsibilities and achievements.</p>
-        </div>
-        <div class="job">
-          <h3>Job Title, Company Name</h3>
-          <div class="meta">Year – Year</div>
-          <p>Placeholder description of responsibilities and achievements.</p>
-        </div>
-      </section>
-
-      <section id="projects">
-        <h2>Projects</h2>
-        <div class="grid">
-          <div class="card"><h3>Project One</h3><p>Placeholder project description.</p></div>
-          <div class="card"><h3>Project Two</h3><p>Placeholder project description.</p></div>
-          <div class="card"><h3>Project Three</h3><p>Placeholder project description.</p></div>
-        </div>
-      </section>
-
-      <section id="skills">
-        <h2>Skills</h2>
-        <div class="tags">
-          <span>Skill One</span><span>Skill Two</span><span>Skill Three</span>
-          <span>Skill Four</span><span>Skill Five</span><span>Skill Six</span>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Placeholder call to action. <a href="mailto:you@example.com">you@example.com</a></p>
-        <p><a href="#">LinkedIn</a> · <a href="#">GitHub</a> · <a href="#">X</a></p>
-      </section>
     </div>
+
+    <section id="experience">
+      <div class="container">
+        <h2>Work Experience</h2>
+        <div class="card">
+          <h3>Job Title</h3>
+          <div class="meta">Company Name · Month Year to Present</div>
+          <ul>
+            <li>Placeholder responsibility or achievement.</li>
+            <li>Placeholder responsibility or achievement.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Job Title</h3>
+          <div class="meta">Company Name · Month Year to Month Year</div>
+          <ul>
+            <li>Placeholder responsibility or achievement.</li>
+            <li>Placeholder responsibility or achievement.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <article class="card">
+            <div class="project-thumb">Project image</div>
+            <h3>Project One</h3>
+            <div class="tags"><span>Tech</span><span>Tech</span><span>Tech</span></div>
+            <p>Placeholder project description.</p>
+            <div class="btn-row">
+              <a class="btn" href="#">Live Demo</a>
+              <a class="btn outline" href="#">Repository</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="project-thumb">Project image</div>
+            <h3>Project Two</h3>
+            <div class="tags"><span>Tech</span><span>Tech</span><span>Tech</span></div>
+            <p>Placeholder project description.</p>
+            <div class="btn-row">
+              <a class="btn" href="#">Live Demo</a>
+              <a class="btn outline" href="#">Repository</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="project-thumb">Project image</div>
+            <h3>Project Three</h3>
+            <div class="tags"><span>Tech</span><span>Tech</span><span>Tech</span></div>
+            <p>Placeholder project description.</p>
+            <div class="btn-row">
+              <a class="btn" href="#">Live Demo</a>
+              <a class="btn outline" href="#">Repository</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <h2>Education</h2>
+        <div class="card">
+          <h3>Degree or Certification</h3>
+          <div class="meta">Institution Name · Year to Year</div>
+          <p>Placeholder description of coursework or achievements.</p>
+        </div>
+        <div class="card">
+          <h3>Degree or Certification</h3>
+          <div class="meta">Institution Name · Year to Year</div>
+          <p>Placeholder description of coursework or achievements.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <div class="wrap">© 2026 Kalana Wijethunga. All rights reserved.</div>
+  <footer class="site">
+    <div class="container">
+      <span>© 2026 Kalana Wijethunga. All rights reserved.</span>
+      <span>Placeholder footer note</span>
+    </div>
   </footer>
 </body>
 </html>
