@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kalana Wijethunga | Software Architect</title>
-  <meta name="description" content="Placeholder profile for Kalana Wijethunga, Software Architect.">
+  <meta name="description" content="Kalana Wijethunga, Software Architect specialising in cloud-native solution architecture on Azure and AWS.">
   <style>
     :root {
       --bg: #f9fafb;
@@ -63,8 +63,14 @@
     }
     .hero h1 { font-size: clamp(2rem, 5vw, 2.75rem); margin: 0 0 8px; line-height: 1.15; }
     .hero .role { color: var(--accent); font-weight: 600; font-size: 1.15rem; margin: 0 0 16px; }
-    .hero p.bio { color: var(--muted); max-width: 560px; margin: 0 0 20px; }
-    .socials { display: flex; gap: 16px; font-size: 0.95rem; }
+    .hero p.bio { color: var(--muted); max-width: 600px; margin: 0 0 20px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+    .skills span {
+      background: var(--tag-bg); color: var(--tag-fg);
+      padding: 2px 10px; border-radius: 6px; font-size: 0.8rem;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+    }
+    .socials { display: flex; gap: 16px; font-size: 0.95rem; flex-wrap: wrap; }
     .socials a { color: var(--muted); }
     .socials a:hover { color: var(--accent); }
     @media (min-width: 768px) {
@@ -88,8 +94,9 @@
     .card h3 { margin: 0 0 4px; font-size: 1.15rem; }
     .card .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
     .card p { margin: 0 0 12px; color: var(--muted); }
-    .card ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .card ul { margin: 0 0 12px; padding-left: 20px; color: var(--muted); }
     .card ul li { margin-bottom: 4px; }
+    .card .tech { font-size: 0.85rem; color: var(--muted); margin: 0; }
 
     .project-grid {
       display: grid; gap: 20px;
@@ -100,6 +107,7 @@
       border: 1px dashed var(--border);
       display: flex; align-items: center; justify-content: center;
       color: var(--muted); font-size: 0.85rem; margin-bottom: 16px;
+      text-align: center; padding: 8px;
     }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
     .tags span {
@@ -141,12 +149,19 @@
       <div class="hero">
         <div>
           <h1>Hi, I'm Kalana Wijethunga</h1>
-          <p class="role">Software Architect</p>
-          <p class="bio">Placeholder introduction. A short paragraph describing your background, what you build, and the kinds of problems you enjoy solving.</p>
+          <p class="role">Software Architect - Cloud and AI</p>
+          <p class="bio">Software architect with over 13 years in software development, including more than 5 years in an architect role. I design modern, secure, cloud-native solutions on Azure and AWS, and I have led the architecture of more than 10 cloud solutions and migrations for organisations in Australia and the UK.</p>
+          <div class="skills">
+            <span>Cloud-native Architecture</span>
+            <span>Azure</span>
+            <span>AWS</span>
+            <span>.NET / .NET Core</span>
+            <span>DevSecOps</span>
+            <span>Cloud Migration</span>
+          </div>
           <div class="socials">
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
-            <a href="mailto:you@example.com">Email</a>
+            <a href="https://www.linkedin.com/in/kalanaw/">LinkedIn</a>
+            <a href="mailto:kalanasupun@gmail.com">Email</a>
           </div>
         </div>
         <img class="hero-photo" src="assets/profile.jpg" alt="Kalana Wijethunga">
@@ -157,20 +172,81 @@
       <div class="container">
         <h2>Work Experience</h2>
         <div class="card">
-          <h3>Job Title</h3>
-          <div class="meta">Company Name · Month Year to Present</div>
+          <h3>Software Architect</h3>
+          <div class="meta">Random Software Ltd, United Kingdom · January 2024 to Present</div>
+          <p>Software architect and primary technical authority for the product portfolio and lead technical authority across all development teams, focused on automotive aftermarket software.</p>
           <ul>
-            <li>Placeholder responsibility or achievement.</li>
-            <li>Placeholder responsibility or achievement.</li>
+            <li>Guide and consult development teams on technical design and implementation.</li>
+            <li>Define initial architectures for new products and recommend improvements to existing ones.</li>
+            <li>Strengthen information security practices and cloud security posture.</li>
+            <li>Define engineering efficiency and quality KPIs, and run periodic audits of development practices.</li>
           </ul>
+          <p class="tech">.NET Core, Angular 8, Node.js, Azure, Azure AI, Azure DevOps, AWS, OpenAI</p>
         </div>
         <div class="card">
-          <h3>Job Title</h3>
-          <div class="meta">Company Name · Month Year to Month Year</div>
+          <h3>Part-time Software Architect Consultant</h3>
+          <div class="meta">Freelance · June 2023 to Present</div>
           <ul>
-            <li>Placeholder responsibility or achievement.</li>
-            <li>Placeholder responsibility or achievement.</li>
+            <li>Provide architecture and technical consultation on cloud-native projects for Sri Lankan startups and international clients.</li>
+            <li>Analyse cloud infrastructure and recommend operational, cost and security optimisations.</li>
+            <li>Design solution architectures and implementation strategies for engineering teams.</li>
           </ul>
+          <p class="tech">.NET Core, ASP.NET Core, Azure (App Services, Functions, Containers, AI services, APIM, Service Bus, Cosmos DB), Azure DevOps</p>
+        </div>
+        <div class="card">
+          <h3>Software Architect</h3>
+          <div class="meta">Mitra Innovation, Sri Lanka · November 2020 to May 2023</div>
+          <p>Designed and developed a clinically validated digital self-assessment platform for musculoskeletal disorders at PhysioMedics, and led the architecture of its cloud-native SaaS product.</p>
+          <ul>
+            <li>Defined the overall solution architecture and design for the cloud-native SaaS product.</li>
+            <li>Advised the CTO and product owner on the product roadmap and guided the offshore development team.</li>
+            <li>Served as Program Architect for Security First Framework, a DevSecOps framework for cloud-native solutions, and set the engineering practices and DevSecOps lifecycle.</li>
+            <li>Delivered a proof-of-concept for automated work allocation and a conversational bot for a legal consulting firm.</li>
+            <li>Designed the cloud migration strategy and DevOps pipelines for a non-profit development fund in the Middle East.</li>
+            <li>Consulted on migrating a two-decade-old on-premises solution to a modern cloud-native platform for a forensic laboratory chain.</li>
+          </ul>
+          <p class="tech">.NET Core, ASP.NET Core, Azure, AWS, Azure DevOps, Azure AI Services</p>
+        </div>
+        <div class="card">
+          <h3>Associate Software Architect</h3>
+          <div class="meta">TerryWhite Chemmart, Australia · November 2018 to November 2020</div>
+          <ul>
+            <li>Architected multiple application modernisation projects focused on cloud migrations and integrations.</li>
+            <li>Led the migration of business applications and workloads to Azure, optimised for performance.</li>
+            <li>Directed the offshore development team and set technical practices and standards.</li>
+            <li>Coordinated with the CIO, product owners and vendors to define the digital portfolio and roadmap.</li>
+          </ul>
+          <p class="tech">.NET Core, Azure (Functions, Logic Apps, AKS, Service Bus, Event Grid, API Management, AD B2C, Cosmos DB), Azure DevOps</p>
+        </div>
+        <div class="card">
+          <h3>Technical Lead</h3>
+          <div class="meta">Thomas Cook Money, Australia · December 2016 to November 2018</div>
+          <ul>
+            <li>Defined the solution architecture for a cloud-native travel finance web portal.</li>
+            <li>Owned AWS infrastructure architecture and DevOps setup.</li>
+            <li>Led the offshore development team through design, development and deployment.</li>
+          </ul>
+          <p class="tech">ASP.NET MVC, Web API, Umbraco, AWS, Jenkins</p>
+        </div>
+        <div class="card">
+          <h3>Senior Software Engineer</h3>
+          <div class="meta">EagleBoys Pizza, Australia · December 2014 to December 2016</div>
+          <ul>
+            <li>Built an e-commerce and integration platform on Azure, including the e-commerce ordering site for Pizza Hut Australia's franchise network.</li>
+            <li>Created technical designs and led the development team in the later stages of the project.</li>
+            <li>Owned cloud infrastructure, DevOps and release deployments.</li>
+          </ul>
+          <p class="tech">ASP.NET MVC, Web API, C#, AngularJS, Entity Framework, Azure, AWS</p>
+        </div>
+        <div class="card">
+          <h3>Senior Engineer / Software Engineer</h3>
+          <div class="meta">Virtusa, Sri Lanka · October 2011 to December 2014</div>
+          <ul>
+            <li>Led a development team that delivered a distributed desktop application for field report workflows in Siemens Energy's Oil and Gas sector.</li>
+            <li>Contributed to a modular desktop application shell and distributed platform for Siemens Energy in the USA.</li>
+            <li>Worked on the core team rolling out an ERP system and its data integration platforms.</li>
+          </ul>
+          <p class="tech">.NET, C#, WPF, WCF, MVVM, MEF, Entity Framework, Oracle, SQL Server</p>
         </div>
       </div>
     </section>
@@ -180,33 +256,27 @@
         <h2>Projects</h2>
         <div class="project-grid">
           <article class="card">
-            <div class="project-thumb">Project image</div>
-            <h3>Project One</h3>
-            <div class="tags"><span>Tech</span><span>Tech</span><span>Tech</span></div>
-            <p>Placeholder project description.</p>
+            <div class="project-thumb">Security First Framework</div>
+            <h3>Security First Framework</h3>
+            <div class="tags"><span>DevSecOps</span><span>Azure</span><span>AWS</span></div>
+            <p>A proprietary framework for enabling DevSecOps across cloud-native solutions, from inception through deployment and operations.</p>
+          </article>
+          <article class="card">
+            <div class="project-thumb">PhysioMedics platform</div>
+            <h3>Digital Self-Assessment Platform</h3>
+            <div class="tags"><span>.NET Core</span><span>Azure</span><span>SaaS</span></div>
+            <p>A clinically validated digital self-assessment platform for musculoskeletal disorders, built as a cloud-native SaaS product.</p>
             <div class="btn-row">
-              <a class="btn" href="#">Live Demo</a>
-              <a class="btn outline" href="#">Repository</a>
+              <a class="btn outline" href="https://www.physiowizard.com/">Visit site</a>
             </div>
           </article>
           <article class="card">
-            <div class="project-thumb">Project image</div>
-            <h3>Project Two</h3>
-            <div class="tags"><span>Tech</span><span>Tech</span><span>Tech</span></div>
-            <p>Placeholder project description.</p>
+            <div class="project-thumb">Random Software platform</div>
+            <h3>Automotive Aftermarket Products</h3>
+            <div class="tags"><span>.NET Core</span><span>Angular</span><span>Azure AI</span></div>
+            <p>Product portfolio for the collision repair sector, with architecture and security guidance across all development teams.</p>
             <div class="btn-row">
-              <a class="btn" href="#">Live Demo</a>
-              <a class="btn outline" href="#">Repository</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="project-thumb">Project image</div>
-            <h3>Project Three</h3>
-            <div class="tags"><span>Tech</span><span>Tech</span><span>Tech</span></div>
-            <p>Placeholder project description.</p>
-            <div class="btn-row">
-              <a class="btn" href="#">Live Demo</a>
-              <a class="btn outline" href="#">Repository</a>
+              <a class="btn outline" href="https://randomsoftware.net/">Visit site</a>
             </div>
           </article>
         </div>
@@ -215,16 +285,24 @@
 
     <section id="education">
       <div class="container">
-        <h2>Education</h2>
+        <h2>Education &amp; Certifications</h2>
         <div class="card">
-          <h3>Degree or Certification</h3>
-          <div class="meta">Institution Name · Year to Year</div>
-          <p>Placeholder description of coursework or achievements.</p>
+          <h3>Master of Science in Cyber Security</h3>
+          <div class="meta">University of Gloucestershire, United Kingdom · February 2023 to December 2024 (expected)</div>
         </div>
         <div class="card">
-          <h3>Degree or Certification</h3>
-          <div class="meta">Institution Name · Year to Year</div>
-          <p>Placeholder description of coursework or achievements.</p>
+          <h3>Bachelor of Computer Science</h3>
+          <div class="meta">University of Colombo School of Computing, Sri Lanka · August 2008 to September 2011</div>
+        </div>
+        <div class="card">
+          <h3>Certifications</h3>
+          <ul>
+            <li>Microsoft Certified: Azure AI Engineer Associate (August 2024)</li>
+            <li>Microsoft Certified: Azure AI Fundamentals (July 2024)</li>
+            <li>Microsoft Certified: Security, Compliance, and Identity Fundamentals (August 2024)</li>
+            <li>GitLab Solutions Architect Core (August 2022)</li>
+            <li>AWS Technical Professional Accreditation (July 2018)</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -232,8 +310,8 @@
 
   <footer class="site">
     <div class="container">
-      <span>© 2026 Kalana Wijethunga. All rights reserved.</span>
-      <span>Placeholder footer note</span>
+      <span>© 2024 Kalana Wijethunga. All rights reserved.</span>
+      <span>Software Architect</span>
     </div>
   </footer>
 </body>
