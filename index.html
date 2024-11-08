@@ -7,16 +7,12 @@
   <meta name="description" content="Kalana Wijethunga, Software Architect specialising in cloud-native solution architecture on Azure and AWS.">
   <style>
     :root {
-      --bg: #f9fafb;
-      --surface: #ffffff;
-      --fg: #111827;
-      --muted: #6b7280;
-      --accent: #3b82f6;
-      --border: #e5e7eb;
-      --tag-bg: #f3f4f6;
-      --tag-fg: #c7254e;
-      --shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.04);
-      --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+      --bg: #ffffff;
+      --fg: #000000;
+      --muted: #5c5c5c;
+      --faint: #9a9a9a;
+      --rule: #e2e2e2;
+      --serif: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -25,111 +21,69 @@
       background: var(--bg);
       color: var(--fg);
       font-family: var(--serif);
+      font-size: 18px;
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 1024px; margin: 0 auto; padding: 0 16px; }
+    a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    a:hover { color: var(--muted); }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 22px; }
 
     /* Header */
-    header.site {
-      position: sticky; top: 0; z-index: 10;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-    }
+    header.site { padding: 36px 0 0; }
     header.site .container {
-      display: flex; justify-content: space-between; align-items: center;
-      height: 64px; flex-wrap: wrap;
+      display: flex; justify-content: space-between; align-items: baseline;
+      flex-wrap: wrap; gap: 12px 32px;
     }
-    .logo { font-weight: 700; color: var(--fg); font-size: 1.15rem; }
-    .logo:hover { text-decoration: none; }
-    nav.main a {
-      margin-left: 24px; color: var(--muted); font-size: 0.95rem;
-    }
-    nav.main a:hover { color: var(--fg); text-decoration: none; }
+    .logo { font-weight: 400; font-size: 1.05rem; text-decoration: none; color: var(--fg); }
+    .logo:hover { text-decoration: underline; }
+    nav.main { display: flex; gap: 22px; flex-wrap: wrap; font-size: 0.95rem; }
+    nav.main a { text-decoration: none; color: var(--muted); font-style: italic; }
+    nav.main a:hover { color: var(--fg); }
 
     /* Hero */
-    .hero {
-      padding: 64px 0 48px;
-      display: grid; gap: 32px;
-      grid-template-columns: 1fr;
-      align-items: center;
-    }
+    .hero { padding: 96px 0 88px; }
     .hero-photo {
-      width: 200px; height: 200px; border-radius: 16px;
+      display: block;
+      width: 160px; height: 160px;
       object-fit: cover; object-position: center top;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
+      margin-bottom: 40px;
+      filter: grayscale(100%);
     }
-    .hero h1 { font-size: clamp(2rem, 5vw, 2.75rem); margin: 0 0 8px; line-height: 1.15; }
-    .hero .role { color: var(--accent); font-weight: 600; font-size: 1.15rem; margin: 0 0 16px; }
-    .hero p.bio { color: var(--muted); max-width: 600px; margin: 0 0 20px; }
-    .skills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
-    .skills span {
-      background: var(--tag-bg); color: var(--tag-fg);
-      padding: 2px 10px; border-radius: 6px; font-size: 0.8rem;
-      font-family: ui-monospace, Menlo, Consolas, monospace;
+    .hero h1 {
+      font-weight: 400; font-size: clamp(2.4rem, 6vw, 3.6rem);
+      line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 14px;
     }
-    .socials { display: flex; gap: 16px; font-size: 0.95rem; flex-wrap: wrap; }
-    .socials a { color: var(--muted); }
-    .socials a:hover { color: var(--accent); }
-    @media (min-width: 768px) {
-      .hero { grid-template-columns: 1fr 220px; }
-      .hero-photo { order: 2; justify-self: end; }
-    }
+    .role { font-style: italic; color: var(--muted); font-size: 1.2rem; margin: 0 0 32px; }
+    .bio { color: var(--fg); max-width: 620px; margin: 0 0 28px; }
+    .skills { color: var(--muted); font-size: 0.95rem; margin: 0 0 28px; font-style: italic; }
+    .socials { display: flex; gap: 22px; font-size: 0.95rem; flex-wrap: wrap; }
 
     /* Sections */
-    section { padding: 48px 0; }
-    section > .container > h2 {
-      font-size: 1.6rem; margin: 0 0 24px;
-      padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    section { padding: 72px 0; }
+    section h2 {
+      font-weight: 400; font-style: italic; font-size: 1.05rem;
+      color: var(--muted); margin: 0 0 40px; letter-spacing: 0.02em;
     }
 
-    /* Cards */
-    .card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 24px; box-shadow: var(--shadow);
-      margin-bottom: 16px;
-    }
-    .card h3 { margin: 0 0 4px; font-size: 1.15rem; }
-    .card .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
-    .card p { margin: 0 0 12px; color: var(--muted); }
-    .card ul { margin: 0 0 12px; padding-left: 20px; color: var(--muted); }
-    .card ul li { margin-bottom: 4px; }
-    .card .tech { font-size: 0.85rem; color: var(--muted); margin: 0; }
+    /* Entries (no boxes) */
+    .entry { margin: 0 0 56px; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry h3 { font-weight: 400; font-size: 1.3rem; margin: 0 0 4px; line-height: 1.3; }
+    .entry .meta { font-style: italic; color: var(--muted); font-size: 0.95rem; margin: 0 0 16px; }
+    .entry p { margin: 0 0 14px; color: var(--fg); }
+    .entry ul { margin: 0 0 14px; padding-left: 20px; }
+    .entry li { margin-bottom: 6px; }
+    .entry .tech { font-style: italic; color: var(--muted); font-size: 0.9rem; margin: 0; }
+    .entry .links { margin-top: 12px; font-size: 0.95rem; }
 
-    .project-grid {
-      display: grid; gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-    .project-thumb {
-      height: 160px; border-radius: 8px; background: var(--tag-bg);
-      border: 1px dashed var(--border);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--muted); font-size: 0.85rem; margin-bottom: 16px;
-      text-align: center; padding: 8px;
-    }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
-    .tags span {
-      background: var(--tag-bg); color: var(--tag-fg);
-      padding: 2px 10px; border-radius: 6px; font-size: 0.8rem;
-      font-family: ui-monospace, Menlo, Consolas, monospace;
-    }
-    .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
-    .btn {
-      display: inline-block; padding: 8px 16px; border-radius: 8px;
-      font-size: 0.9rem; font-weight: 600;
-      background: var(--accent); color: #fff;
-    }
-    .btn:hover { text-decoration: none; opacity: 0.9; }
-    .btn.outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+    /* Compact list (certifications) */
+    .list-plain { list-style: none; padding: 0; margin: 0; }
+    .list-plain li { margin-bottom: 8px; }
 
     /* Footer */
-    footer.site {
-      background: var(--surface); border-top: 1px solid var(--border);
-      padding: 24px 0; color: var(--muted); font-size: 0.9rem;
-    }
-    footer.site .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    footer.site { padding: 48px 0 64px; color: var(--muted); font-size: 0.9rem; font-style: italic; }
+    footer.site .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; }
   </style>
 </head>
 <body>
@@ -147,34 +101,26 @@
   <main id="top">
     <div class="container">
       <div class="hero">
-        <div>
-          <h1>Hi, I'm Kalana Wijethunga</h1>
-          <p class="role">Software Architect - Cloud and AI</p>
-          <p class="bio">Software architect with over 13 years in software development, including more than 5 years in an architect role. I design modern, secure, cloud-native solutions on Azure and AWS, and I have led the architecture of more than 10 cloud solutions and migrations for organisations in Australia and the UK.</p>
-          <div class="skills">
-            <span>Cloud-native Architecture</span>
-            <span>Azure</span>
-            <span>AWS</span>
-            <span>.NET / .NET Core</span>
-            <span>DevSecOps</span>
-            <span>Cloud Migration</span>
-          </div>
-          <div class="socials">
-            <a href="https://www.linkedin.com/in/kalanaw/">LinkedIn</a>
-            <a id="email-link" href="#" role="link">Email</a>
-          </div>
-        </div>
         <img class="hero-photo" src="assets/profile.jpg" alt="Kalana Wijethunga">
+        <h1>Kalana Wijethunga</h1>
+        <p class="role">Software Architect</p>
+        <p class="bio">Software architect with over 13 years in software development, including more than 5 years in an architect role. I design modern, secure, cloud-native solutions on Azure and AWS, and I have led the architecture of more than 10 cloud solutions and migrations for organisations in Australia and the UK.</p>
+        <p class="skills">Cloud-native architecture, Azure, AWS, .NET and .NET Core, DevSecOps, cloud migration</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/kalanaw/">LinkedIn</a>
+          <a id="email-link" href="#" role="link">Email</a>
+        </div>
       </div>
     </div>
 
     <section id="experience">
       <div class="container">
         <h2>Work Experience</h2>
-        <div class="card">
+
+        <div class="entry">
           <h3>Software Architect</h3>
           <div class="meta">Random Software Ltd, United Kingdom · January 2024 to Present</div>
-          <p>Software architect and primary technical authority for the product portfolio and lead technical authority across all development teams, focused on automotive aftermarket software.</p>
+          <p>Chief software architect for the product portfolio and lead technical authority across all development teams, focused on automotive aftermarket software.</p>
           <ul>
             <li>Guide and consult development teams on technical design and implementation.</li>
             <li>Define initial architectures for new products and recommend improvements to existing ones.</li>
@@ -183,7 +129,8 @@
           </ul>
           <p class="tech">.NET Core, Angular 8, Node.js, Azure, Azure AI, Azure DevOps, AWS, OpenAI</p>
         </div>
-        <div class="card">
+
+        <div class="entry">
           <h3>Part-time Software Architect Consultant</h3>
           <div class="meta">Freelance · June 2023 to Present</div>
           <ul>
@@ -193,7 +140,8 @@
           </ul>
           <p class="tech">.NET Core, ASP.NET Core, Azure (App Services, Functions, Containers, AI services, APIM, Service Bus, Cosmos DB), Azure DevOps</p>
         </div>
-        <div class="card">
+
+        <div class="entry">
           <h3>Software Architect</h3>
           <div class="meta">Mitra Innovation, Sri Lanka · November 2020 to May 2023</div>
           <p>Designed and developed a clinically validated digital self-assessment platform for musculoskeletal disorders at PhysioMedics, and led the architecture of its cloud-native SaaS product.</p>
@@ -207,9 +155,10 @@
           </ul>
           <p class="tech">.NET Core, ASP.NET Core, Azure, AWS, Azure DevOps, Azure AI Services</p>
         </div>
-        <div class="card">
+
+        <div class="entry">
           <h3>Associate Software Architect</h3>
-          <div class="meta">TerryWhite Chemmart, Australia · November 2018 to November 2020</div>
+          <div class="meta">Mitra Innovation, Sri Lanka · November 2018 to November 2020</div>
           <ul>
             <li>Architected multiple application modernisation projects focused on cloud migrations and integrations.</li>
             <li>Led the migration of business applications and workloads to Azure, optimised for performance.</li>
@@ -218,9 +167,10 @@
           </ul>
           <p class="tech">.NET Core, Azure (Functions, Logic Apps, AKS, Service Bus, Event Grid, API Management, AD B2C, Cosmos DB), Azure DevOps</p>
         </div>
-        <div class="card">
+
+        <div class="entry">
           <h3>Technical Lead</h3>
-          <div class="meta">Thomas Cook Money, Australia · December 2016 to November 2018</div>
+          <div class="meta">Mitra Innovation, Sri Lanka · December 2016 to November 2018</div>
           <ul>
             <li>Defined the solution architecture for a cloud-native travel finance web portal.</li>
             <li>Owned AWS infrastructure architecture and DevOps setup.</li>
@@ -228,9 +178,10 @@
           </ul>
           <p class="tech">ASP.NET MVC, Web API, Umbraco, AWS, Jenkins</p>
         </div>
-        <div class="card">
+
+        <div class="entry">
           <h3>Senior Software Engineer</h3>
-          <div class="meta">EagleBoys Pizza, Australia · December 2014 to December 2016</div>
+          <div class="meta">Mitra Innovation, Sri Lanka · December 2014 to December 2016</div>
           <ul>
             <li>Built an e-commerce and integration platform on Azure, including the e-commerce ordering site for Pizza Hut Australia's franchise network.</li>
             <li>Created technical designs and led the development team in the later stages of the project.</li>
@@ -238,7 +189,8 @@
           </ul>
           <p class="tech">ASP.NET MVC, Web API, C#, AngularJS, Entity Framework, Azure, AWS</p>
         </div>
-        <div class="card">
+
+        <div class="entry">
           <h3>Senior Engineer / Software Engineer</h3>
           <div class="meta">Virtusa, Sri Lanka · October 2011 to December 2014</div>
           <ul>
@@ -254,49 +206,44 @@
     <section id="projects">
       <div class="container">
         <h2>Projects</h2>
-        <div class="project-grid">
-          <article class="card">
-            <div class="project-thumb">Security First Framework</div>
-            <h3>Security First Framework</h3>
-            <div class="tags"><span>DevSecOps</span><span>Azure</span><span>AWS</span></div>
-            <p>A proprietary framework for enabling DevSecOps across cloud-native solutions, from inception through deployment and operations.</p>
-          </article>
-          <article class="card">
-            <div class="project-thumb">PhysioMedics platform</div>
-            <h3>Digital Self-Assessment Platform</h3>
-            <div class="tags"><span>.NET Core</span><span>Azure</span><span>SaaS</span></div>
-            <p>A clinically validated digital self-assessment platform for musculoskeletal disorders, built as a cloud-native SaaS product.</p>
-            <div class="btn-row">
-              <a class="btn outline" href="https://www.physiowizard.com/">Visit site</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="project-thumb">Random Software platform</div>
-            <h3>Automotive Aftermarket Products</h3>
-            <div class="tags"><span>.NET Core</span><span>Angular</span><span>Azure AI</span></div>
-            <p>Product portfolio for the collision repair sector, with architecture and security guidance across all development teams.</p>
-            <div class="btn-row">
-              <a class="btn outline" href="https://randomsoftware.net/">Visit site</a>
-            </div>
-          </article>
+
+        <div class="entry">
+          <h3>Security First Framework</h3>
+          <div class="meta">Mitra Innovation · DevSecOps, Azure, AWS</div>
+          <p>A proprietary framework for enabling DevSecOps across cloud-native solutions, from inception through deployment and operations.</p>
+        </div>
+
+        <div class="entry">
+          <h3>Digital Self-Assessment Platform</h3>
+          <div class="meta">PhysioMedics · .NET Core, Azure, SaaS</div>
+          <p>A clinically validated digital self-assessment platform for musculoskeletal disorders, built as a cloud-native SaaS product.</p>
+        </div>
+
+        <div class="entry">
+          <h3>Automotive Aftermarket Products</h3>
+          <div class="meta">Random Software Ltd · .NET Core, Angular, Azure AI</div>
+          <p>Product portfolio for the collision repair sector, with architecture and security guidance across all development teams.</p>
         </div>
       </div>
     </section>
 
     <section id="education">
       <div class="container">
-        <h2>Education &amp; Certifications</h2>
-        <div class="card">
+        <h2>Education and Certifications</h2>
+
+        <div class="entry">
           <h3>Master of Science in Cyber Security</h3>
           <div class="meta">University of Gloucestershire, United Kingdom · February 2023 to December 2024 (expected)</div>
         </div>
-        <div class="card">
+
+        <div class="entry">
           <h3>Bachelor of Computer Science</h3>
           <div class="meta">University of Colombo School of Computing, Sri Lanka · August 2008 to September 2011</div>
         </div>
-        <div class="card">
+
+        <div class="entry">
           <h3>Certifications</h3>
-          <ul>
+          <ul class="list-plain">
             <li>Microsoft Certified: Azure AI Engineer Associate (August 2024)</li>
             <li>Microsoft Certified: Azure AI Fundamentals (July 2024)</li>
             <li>Microsoft Certified: Security, Compliance, and Identity Fundamentals (August 2024)</li>
@@ -310,10 +257,11 @@
 
   <footer class="site">
     <div class="container">
-      <span>© 2024 Kalana Wijethunga. All rights reserved.</span>
+      <span>© 2024 Kalana Wijethunga</span>
       <span>Software Architect</span>
     </div>
   </footer>
+
   <script src="assets/email.js"></script>
 </body>
 </html>
