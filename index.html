@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kalana Wijethunga | Software Architect</title>
-  <meta name="description" content="Kalana Wijethunga, Software Architect specialising in cloud-native solution architecture on Azure and AWS.">
+  <title>Kalana Wijethunga | AI and GenAI Solution Architect</title>
+  <meta name="description" content="Kalana Wijethunga, AI and GenAI Solution Architect focused on agentic AI, RAG and cloud-native architecture on Azure and AWS.">
   <style>
     :root {
       --bg: #ffffff;
@@ -21,11 +21,11 @@
       background: var(--bg);
       color: var(--fg);
       font-family: var(--serif);
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    a { color: var(--fg); text-decoration: underline; text-decoration-color: #999898; text-underline-offset: 3px; text-decoration-thickness: 0.5px; }
     a:hover { color: var(--muted); }
     .container { max-width: 760px; margin: 0 auto; padding: 0 22px; }
 
@@ -54,35 +54,36 @@
       font-weight: 400; font-size: clamp(2.4rem, 6vw, 3.6rem);
       line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 14px;
     }
-    .role { font-style: italic; color: var(--muted); font-size: 1.2rem; margin: 0 0 32px; }
+    .role { font-style: italic; color: var(--muted); font-size: 1.15rem; margin: 0 0 32px; }
     .bio { color: var(--fg); max-width: 620px; margin: 0 0 28px; }
-    .skills { color: var(--muted); font-size: 0.95rem; margin: 0 0 28px; font-style: italic; }
+    .skills { color: var(--muted); font-size: 0.9rem; margin: 0 0 28px; font-style: italic; }
     .socials { display: flex; gap: 22px; font-size: 0.95rem; flex-wrap: wrap; }
 
     /* Sections */
     section { padding: 72px 0; }
     section h2 {
-      font-weight: 400; font-style: italic; font-size: 1.05rem;
-      color: var(--muted); margin: 0 0 40px; letter-spacing: 0.02em;
+      font-weight: 400; font-size: 1.6rem; line-height: 1.2;
+      color: var(--fg); margin: 0 0 40px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--fg);
     }
 
     /* Entries (no boxes) */
     .entry { margin: 0 0 56px; }
     .entry:last-child { margin-bottom: 0; }
-    .entry h3 { font-weight: 400; font-size: 1.3rem; margin: 0 0 4px; line-height: 1.3; }
-    .entry .meta { font-style: italic; color: var(--muted); font-size: 0.95rem; margin: 0 0 16px; }
+    .entry h3 { font-weight: 400; font-size: 1.15rem; margin: 0 0 4px; line-height: 1.3; }
+    .entry .meta { font-style: italic; color: var(--muted); font-size: 0.9rem; margin: 0 0 16px; }
     .entry p { margin: 0 0 14px; color: var(--fg); }
-    .entry ul { margin: 0 0 14px; padding-left: 20px; }
+    .entry ul { margin: 0; padding-left: 20px; }
     .entry li { margin-bottom: 6px; }
-    .entry .tech { font-style: italic; color: var(--muted); font-size: 0.9rem; margin: 0; }
-    .entry .links { margin-top: 12px; font-size: 0.95rem; }
+    .entry .note { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0 0 14px; }
+    .entry .courses { font-size: 0.85rem; color: var(--muted); margin: 0; }
 
     /* Compact list (certifications) */
-    .list-plain { list-style: none; padding: 0; margin: 0; }
+    .entry ul.list-plain { list-style: none; padding: 0 0 0 20px; margin: 28px 0 0; }
     .list-plain li { margin-bottom: 8px; }
 
     /* Footer */
-    footer.site { padding: 48px 0 64px; color: var(--muted); font-size: 0.9rem; font-style: italic; }
+    footer.site { padding: 48px 0 64px; color: var(--muted); font-size: 0.85rem; font-style: italic; }
     footer.site .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; }
   </style>
 </head>
@@ -92,7 +93,6 @@
       <a class="logo" href="#top">Kalana Wijethunga</a>
       <nav class="main">
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
         <a href="#education">Education</a>
       </nav>
     </div>
@@ -103,9 +103,10 @@
       <div class="hero">
         <img class="hero-photo" src="assets/profile.jpg" alt="Kalana Wijethunga">
         <h1>Kalana Wijethunga</h1>
-        <p class="role">Software Architect</p>
-        <p class="bio">Software architect with over 13 years in software development, including more than 5 years in an architect role. I design modern, secure, cloud-native solutions on Azure and AWS, and I have led the architecture of more than 10 cloud solutions and migrations for organisations in Australia and the UK.</p>
-        <p class="skills">Cloud-native architecture, Azure, AWS, .NET and .NET Core, DevSecOps, cloud migration</p>
+        <p class="role">AI and GenAI Solution Architect</p>
+        <p class="bio">Solution architect with 15+ years in software engineering, the last seven at architect level. I design agentic and GenAI solutions from proof of concept to production, and I own architectural direction across a SaaS product portfolio. I also lead AI adoption across engineering teams.</p>
+        <p class="bio">Before that, I delivered client-facing architecture for organisations in Australia, the UK and the US, covering enterprise integration, cloud migration and modernisation. I hold an MSc in Cyber Security and a Stanford AI Professional Program certificate.</p>
+        <p class="skills">Agentic AI and multi-agent systems, RAG, LangGraph, Azure AI, Amazon Bedrock, cloud-native architecture on Azure and AWS, DevSecOps</p>
         <div class="socials">
           <a href="https://www.linkedin.com/in/kalanaw/">LinkedIn</a>
           <a id="email-link" href="#" role="link">Email</a>
@@ -115,114 +116,79 @@
 
     <section id="experience">
       <div class="container">
-        <h2>Work Experience</h2>
+        <h2>Experience</h2>
 
         <div class="entry">
           <h3>Software Architect</h3>
           <div class="meta">Random Software Ltd, United Kingdom · January 2024 to Present</div>
-          <p>Chief software architect for the product portfolio and lead technical authority across all development teams, focused on automotive aftermarket software.</p>
+          <p>UK SaaS product company in the automotive aftermarket. I lead AI R&amp;D and own architectural direction across the product portfolio.</p>
           <ul>
-            <li>Guide and consult development teams on technical design and implementation.</li>
-            <li>Define initial architectures for new products and recommend improvements to existing ones.</li>
-            <li>Strengthen information security practices and cloud security posture.</li>
-            <li>Define engineering efficiency and quality KPIs, and run periodic audits of development practices.</li>
+            <li>Architected and led delivery of agentic workflows and autonomous capabilities inside production SaaS products.</li>
+            <li>Built custom MCP servers, agent tools and skills, RAG pipelines and knowledge graphs that ground agents in organisational data.</li>
+            <li>Automated document processing, OCR and image recognition in existing workflows.</li>
+            <li>Led the organisation's AI adoption, including upskilling programmes and rollout of AI-assisted engineering and QA tools.</li>
+            <li>Planned new product architectures, validated designs from each project team, and was responsible for architecture governance across several product engineering teams with more than 20 developers.</li>
+            <li>Introduced architecture standards, engineering KPIs and quality-control frameworks, and led DevSecOps programmes and secure development practice.</li>
           </ul>
-          <p class="tech">.NET Core, Angular 8, Node.js, Azure, Azure AI, Azure DevOps, AWS, OpenAI</p>
         </div>
 
         <div class="entry">
-          <h3>Part-time Software Architect Consultant</h3>
-          <div class="meta">Freelance · June 2023 to Present</div>
+          <h3>AI and Software Architecture Consultant</h3>
+          <div class="meta">Independent · May 2023 to November 2025</div>
           <ul>
-            <li>Provide architecture and technical consultation on cloud-native projects for Sri Lankan startups and international clients.</li>
-            <li>Analyse cloud infrastructure and recommend operational, cost and security optimisations.</li>
-            <li>Design solution architectures and implementation strategies for engineering teams.</li>
+            <li>Provided part-time cloud and AI architecture advisory for several Sri Lankan and international clients.</li>
+            <li>Designed AI-native and agentic solutions, and advised on AI adoption strategy, technology roadmaps and cost optimisation.</li>
+            <li>Reviewed solutions for scalability, security and engineering quality, and supported pre-sales and client acquisition.</li>
+            <li>Engaged part-time by Random Software on discovery and conceptual design for new products, before converting to full-time employment.</li>
           </ul>
-          <p class="tech">.NET Core, ASP.NET Core, Azure (App Services, Functions, Containers, AI services, APIM, Service Bus, Cosmos DB), Azure DevOps</p>
         </div>
 
         <div class="entry">
           <h3>Software Architect</h3>
-          <div class="meta">Mitra Innovation, Sri Lanka · November 2020 to May 2023</div>
-          <p>Designed and developed a clinically validated digital self-assessment platform for musculoskeletal disorders at PhysioMedics, and led the architecture of its cloud-native SaaS product.</p>
+          <div class="meta">Mitra AI, Sri Lanka · October 2020 to April 2023</div>
+          <p>IT services and product engineering company delivering cloud and integration work, mainly for clients in Australia and the UK.</p>
           <ul>
-            <li>Defined the overall solution architecture and design for the cloud-native SaaS product.</li>
-            <li>Advised the CTO and product owner on the product roadmap and guided the offshore development team.</li>
-            <li>Served as Program Architect for Security First Framework, a DevSecOps framework for cloud-native solutions, and set the engineering practices and DevSecOps lifecycle.</li>
-            <li>Delivered a proof-of-concept for automated work allocation and a conversational bot for a legal consulting firm.</li>
-            <li>Designed the cloud migration strategy and DevOps pipelines for a non-profit development fund in the Middle East.</li>
-            <li>Consulted on migrating a two-decade-old on-premises solution to a modern cloud-native platform for a forensic laboratory chain.</li>
+            <li>Architected a customer serving platform for a retail pharmacy franchise network of 600+ pharmacies, combining e-commerce, loyalty, centralised identity and health services booking on Azure.</li>
+            <li>Served as Program Architect for the company's internal DevSecOps framework, defining its roadmap, toolkit and adoption across project teams.</li>
+            <li>Software architect for a UK digital healthcare company's clinical self-assessment platform for musculoskeletal disorders, working with the CTO and product owner on the technical roadmap.</li>
+            <li>Cloud solutions architect for a UK creative agency on an Azure migration, and advised a UK forensic science provider on application modernisation.</li>
           </ul>
-          <p class="tech">.NET Core, ASP.NET Core, Azure, AWS, Azure DevOps, Azure AI Services</p>
         </div>
 
         <div class="entry">
           <h3>Associate Software Architect</h3>
-          <div class="meta">Mitra Innovation, Sri Lanka · November 2018 to November 2020</div>
+          <div class="meta">Mitra AI, Sri Lanka · October 2018 to October 2020</div>
           <ul>
-            <li>Architected multiple application modernisation projects focused on cloud migrations and integrations.</li>
-            <li>Led the migration of business applications and workloads to Azure, optimised for performance.</li>
-            <li>Directed the offshore development team and set technical practices and standards.</li>
-            <li>Coordinated with the CIO, product owners and vendors to define the digital portfolio and roadmap.</li>
+            <li>Led the architecture of an event-driven integration platform and an ML recommendation prototype over inventory, merchandise and supply chain systems on Azure.</li>
+            <li>Worked as the client's own architect, setting technical standards and DevOps practices, and leading offshore development teams.</li>
+            <li>Designed and led several application modernisation projects, moving legacy systems to API-driven architectures on Azure.</li>
           </ul>
-          <p class="tech">.NET Core, Azure (Functions, Logic Apps, AKS, Service Bus, Event Grid, API Management, AD B2C, Cosmos DB), Azure DevOps</p>
         </div>
 
         <div class="entry">
           <h3>Technical Lead</h3>
-          <div class="meta">Mitra Innovation, Sri Lanka · December 2016 to November 2018</div>
+          <div class="meta">Mitra AI, Sri Lanka · December 2016 to October 2018</div>
           <ul>
-            <li>Defined the solution architecture for a cloud-native travel finance web portal.</li>
-            <li>Owned AWS infrastructure architecture and DevOps setup.</li>
-            <li>Led the offshore development team through design, development and deployment.</li>
+            <li>Led the design and build of the customer ordering site and back-office systems for a national quick-service restaurant chain, serving 270+ franchise stores on AWS.</li>
+            <li>Architected and delivered a customer portal for a travel finance and insurance company on AWS, and led the offshore team.</li>
           </ul>
-          <p class="tech">ASP.NET MVC, Web API, Umbraco, AWS, Jenkins</p>
         </div>
 
         <div class="entry">
           <h3>Senior Software Engineer</h3>
-          <div class="meta">Mitra Innovation, Sri Lanka · December 2014 to December 2016</div>
+          <div class="meta">Mitra AI, Sri Lanka · December 2014 to December 2016</div>
           <ul>
-            <li>Built an e-commerce and integration platform on Azure, including the e-commerce ordering site for Pizza Hut Australia's franchise network.</li>
-            <li>Created technical designs and led the development team in the later stages of the project.</li>
-            <li>Owned cloud infrastructure, DevOps and release deployments.</li>
+            <li>Designed and developed the online ordering application and integration platform for a franchise pizza chain of around 250 stores, on Azure.</li>
+            <li>Ran the infrastructure, deployment pipelines and production releases.</li>
           </ul>
-          <p class="tech">ASP.NET MVC, Web API, C#, AngularJS, Entity Framework, Azure, AWS</p>
         </div>
 
         <div class="entry">
-          <h3>Senior Engineer / Software Engineer</h3>
-          <div class="meta">Virtusa, Sri Lanka · October 2011 to December 2014</div>
+          <h3>Associate Software Engineer, Software Engineer, then Senior Software Engineer</h3>
+          <div class="meta">Virtusa, Sri Lanka · April 2011 to December 2014</div>
           <ul>
-            <li>Led a development team that delivered a distributed desktop application for field report workflows in Siemens Energy's Oil and Gas sector.</li>
-            <li>Contributed to a modular desktop application shell and distributed platform for Siemens Energy in the USA.</li>
-            <li>Worked on the core team rolling out an ERP system and its data integration platforms.</li>
+            <li>Developed applications for a global industrial energy client and built reusable data migration and application integration frameworks across an Oracle E-Business Suite ERP.</li>
           </ul>
-          <p class="tech">.NET, C#, WPF, WCF, MVVM, MEF, Entity Framework, Oracle, SQL Server</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <h2>Projects</h2>
-
-        <div class="entry">
-          <h3>Security First Framework</h3>
-          <div class="meta">Mitra Innovation · DevSecOps, Azure, AWS</div>
-          <p>A proprietary framework for enabling DevSecOps across cloud-native solutions, from inception through deployment and operations.</p>
-        </div>
-
-        <div class="entry">
-          <h3>Digital Self-Assessment Platform</h3>
-          <div class="meta">PhysioMedics · .NET Core, Azure, SaaS</div>
-          <p>A clinically validated digital self-assessment platform for musculoskeletal disorders, built as a cloud-native SaaS product.</p>
-        </div>
-
-        <div class="entry">
-          <h3>Automotive Aftermarket Products</h3>
-          <div class="meta">Random Software Ltd · .NET Core, Angular, Azure AI</div>
-          <p>Product portfolio for the collision repair sector, with architecture and security guidance across all development teams.</p>
         </div>
       </div>
     </section>
@@ -232,8 +198,15 @@
         <h2>Education and Certifications</h2>
 
         <div class="entry">
+          <h3><a href="https://digitalcredential.stanford.edu/check/8F732BFBD1B9F9ABB5324B518331CBB0A8678D417D9F34C693DC9949E032C73BeTVqWFB4UnBnako3Z0hvcjUwRE1LUHU5MW5lZ0Jwajk0dFJxa21JMFJtTlpQdE9S">Artificial Intelligence Professional Program</a></h3>
+          <div class="meta">Stanford University · August 2025 to July 2026</div>
+          <p class="note">A professional education program delivered through the Stanford University, Center for Global &amp; Online Education.</p>
+          <p class="courses"><a href="https://digitalcredential.stanford.edu/check/4E2A24ECF2DEF60895EDB5E7F23CD375DD84D6F82496FA15D5E8E8C527D9421BRkYzTngySjBQaU51dkJ3YXpqRmpqaUxnWUsyZ0xXSTdXcktUQ0JKS2o0cmp4Uk1H">Deep Generative Models (XCS236)</a>, <a href="https://digitalcredential.stanford.edu/check/F3744F730F231458B7C380E10DE457EDC21B32327A973AD8FA0F72ABC9952AC7dmNuL29vTjl0NVhyZS92TGxjZktLWlB3Ny9lLzZzSjRoUWFNSlp3V2hCSG9OeHAx">NLP with Deep Learning (XCS224N)</a>, and <a href="https://digitalcredential.stanford.edu/check/C00CDA51ECA2A03A13E314C780CAEE11A2F1183F53C3C6D0E12794B97976F929K0JGejE3NlpseENheFJNcEROcm9Yd2JFV0pZVzdOeVZVMlJVbzhiY2Fnckh4NHZv">AI: Principles and Techniques (XCS221)</a>.</p>
+        </div>
+
+        <div class="entry">
           <h3>Master of Science in Cyber Security</h3>
-          <div class="meta">University of Gloucestershire, United Kingdom · February 2023 to December 2024 (expected)</div>
+          <div class="meta">University of Gloucestershire, United Kingdom · February 2023 to November 2024</div>
         </div>
 
         <div class="entry">
@@ -244,11 +217,13 @@
         <div class="entry">
           <h3>Certifications</h3>
           <ul class="list-plain">
-            <li>Microsoft Certified: Azure AI Engineer Associate (August 2024)</li>
-            <li>Microsoft Certified: Azure AI Fundamentals (July 2024)</li>
-            <li>Microsoft Certified: Security, Compliance, and Identity Fundamentals (August 2024)</li>
-            <li>GitLab Solutions Architect Core (August 2022)</li>
-            <li>AWS Technical Professional Accreditation (July 2018)</li>
+            <li>Certified Professional for Software Architecture, Foundation, iSAQB</li>
+            <li><a href="https://learn.microsoft.com/en-us/users/KalanaWijethunga-9822/credentials/3E976A75BAD1A99C">Microsoft Certified: Azure AI Engineer Associate</a> (2024)</li>
+            <li><a href="https://learn.microsoft.com/en-us/users/KalanaWijethunga-9822/credentials/B3C0993D315A8E26">Microsoft Certified: Azure AI Fundamentals</a></li>
+            <li><a href="https://www.coursera.org/account/accomplishments/specialization/2M1C47W8JFQN">Machine Learning Specialization</a>, DeepLearning.AI</li>
+            <li><a href="https://www.credly.com/badges/fb4844cd-43bc-4547-ae76-56c71c97ffca">AWS Certified AI Practitioner</a></li>
+            <li>AWS Technical Professional</li>
+            <li><a href="https://learn.microsoft.com/en-us/users/kalanawijethunga-9822/credentials/4af0735e47d6c750">Microsoft Certified: Security, Compliance, and Identity Fundamentals</a></li>
           </ul>
         </div>
       </div>
@@ -257,8 +232,8 @@
 
   <footer class="site">
     <div class="container">
-      <span>© 2024 Kalana Wijethunga</span>
-      <span>Software Architect</span>
+      <span>© 2026 Kalana Wijethunga</span>
+      <span>AI and GenAI Solution Architect</span>
     </div>
   </footer>
 
