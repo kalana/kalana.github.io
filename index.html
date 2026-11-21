@@ -32,6 +32,9 @@
     "alumniOf": { "@type": "Organization", "name": "University of Colombo School of Computing" }
   }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #ffffff;
@@ -40,6 +43,7 @@
       --faint: #9a9a9a;
       --rule: #e2e2e2;
       --serif: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
+      --display: "Noto Serif", "Iowan Old Style", Georgia, serif;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 64px; }
@@ -69,7 +73,7 @@
       display: flex; justify-content: space-between; align-items: baseline;
       flex-wrap: wrap; gap: 12px 32px;
     }
-    .logo { font-weight: 400; font-size: 0.95rem; text-decoration: none; color: var(--fg); }
+    .logo { font-family: var(--display); font-weight: 400; font-size: 0.95rem; text-decoration: none; color: var(--fg); }
     .logo:hover { text-decoration: underline; }
     nav.main { display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.85rem; }
     nav.main a { text-decoration: none; color: var(--muted); font-style: italic; }
@@ -126,7 +130,7 @@
       filter: grayscale(100%);
     }
     .hero h1 {
-      font-weight: 400; font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-family: var(--display); font-weight: 400; font-size: clamp(1.6rem, 4vw, 2.4rem);
       line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 14px;
     }
     .role { font-style: italic; color: var(--muted); font-size: 1.15rem; margin: 0 0 32px; }
@@ -137,8 +141,8 @@
     /* Sections */
     section { padding: 72px 0; }
     section h2 {
-      font-weight: 400; font-size: 1.6rem; line-height: 1.2;
-      color: var(--fg); margin: 0 0 40px; padding-bottom: 14px;
+      font-family: var(--display); font-weight: 400; font-size: 1.35rem; line-height: 1.2;
+      color: var(--fg); margin: 0 0 40px; padding-bottom: 6px;
       border-bottom: 1px solid var(--fg);
     }
 
@@ -170,7 +174,7 @@
 <body>
   <header class="site">
     <div class="container">
-      <a class="logo" href="#top" aria-label="Kalana Wijethunga"><span>K</span><span class="rest" style="--w:2.4em">alana</span><span class="gap">&nbsp;</span><span>W</span><span class="rest" style="--w:4.3em">ijethunga</span></a>
+      <a class="logo" href="#top" aria-label="Kalana Wijethunga"><span>K</span><span class="rest" style="--w:3em">alana</span><span class="gap">&nbsp;</span><span>W</span><span class="rest" style="--w:5.2em">ijethunga</span></a>
       <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
       <nav class="main" id="site-nav">
         <a href="#experience">Experience</a>

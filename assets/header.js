@@ -16,6 +16,19 @@
   window.addEventListener("scroll", updateScroll, { passive: true });
   updateScroll();
 
+  // Measure the real width of the collapsing name parts so the animation matches the font in use.
+  var rests = header.querySelectorAll(".logo .rest");
+  function measure() {
+    rests.forEach(function (el) {
+      el.style.setProperty("--w", el.scrollWidth + "px");
+    });
+  }
+  measure();
+  window.addEventListener("load", measure);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(measure);
+  }
+
   var toggle = header.querySelector(".menu-toggle");
   var nav = header.querySelector("nav.main");
   if (!toggle || !nav) return;
