@@ -42,7 +42,7 @@
       --serif: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 64px; }
     body {
       margin: 0;
       background: var(--bg);
@@ -56,20 +56,68 @@
     a:hover { color: var(--muted); }
     .container { max-width: 760px; margin: 0 auto; padding: 0 22px; }
 
-    /* Header */
-    header.site { padding: 36px 0 0; }
+    /* Header: fixed compact size, sticky */
+    header.site {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--bg);
+      padding: 14px 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+    header.site.scrolled { border-bottom-color: var(--rule); }
     header.site .container {
       display: flex; justify-content: space-between; align-items: baseline;
       flex-wrap: wrap; gap: 12px 32px;
     }
-    .logo { font-weight: 400; font-size: 1.05rem; text-decoration: none; color: var(--fg); }
+    .logo { font-weight: 400; font-size: 0.95rem; text-decoration: none; color: var(--fg); }
     .logo:hover { text-decoration: underline; }
-    nav.main { display: flex; gap: 22px; flex-wrap: wrap; font-size: 0.95rem; }
+    nav.main { display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.85rem; }
     nav.main a { text-decoration: none; color: var(--muted); font-style: italic; }
     nav.main a:hover { color: var(--fg); }
 
+    /* Logo: full name collapses to initials (KW) on scroll */
+    .logo { display: inline-flex; align-items: baseline; white-space: nowrap; }
+    .logo .rest, .logo .gap {
+      display: inline-block; overflow: hidden; vertical-align: bottom;
+      padding-bottom: 0.25em; margin-bottom: -0.25em;
+      transition: max-width 0.7s cubic-bezier(0.45, 0, 0.2, 1), width 0.7s cubic-bezier(0.45, 0, 0.2, 1), opacity 0.4s ease;
+    }
+    .logo .rest { max-width: var(--w, 5em); opacity: 1; }
+    .logo .gap { width: 0.28em; }
+    header.site.scrolled .logo .rest { max-width: 0; opacity: 0; }
+    header.site.scrolled .logo .gap { width: 0; }
+
+    /* Hamburger button (mobile only) */
+    .menu-toggle {
+      display: none; background: none; border: 0; padding: 8px; margin: -8px;
+      cursor: pointer; align-self: center;
+    }
+    .menu-toggle span {
+      display: block; width: 20px; height: 1.5px; background: var(--fg);
+      margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    header.site.menu-open .menu-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    header.site.menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+    header.site.menu-open .menu-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    @media (max-width: 640px) {
+      .menu-toggle { display: block; }
+      nav.main {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; gap: 0; flex-wrap: nowrap;
+        background: var(--bg); border-bottom: 1px solid var(--rule);
+        padding: 6px 22px 14px; font-size: 1rem;
+      }
+      header.site.menu-open nav.main { display: flex; }
+      nav.main a { padding: 10px 0; }
+      header.site.menu-open { border-bottom-color: var(--rule); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      header.site, .logo .rest, .logo .gap, .menu-toggle span { transition: none; }
+    }
+
     /* Hero */
-    .hero { padding: 96px 0 88px; }
+    .hero { padding: 104px 0 88px; }
     .hero-photo {
       display: block;
       width: 160px; height: 160px;
@@ -122,10 +170,12 @@
 <body>
   <header class="site">
     <div class="container">
-      <a class="logo" href="#top">Kalana Wijethunga</a>
-      <nav class="main">
+      <a class="logo" href="#top" aria-label="Kalana Wijethunga"><span>K</span><span class="rest" style="--w:2.4em">alana</span><span class="gap">&nbsp;</span><span>W</span><span class="rest" style="--w:4.3em">ijethunga</span></a>
+      <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+      <nav class="main" id="site-nav">
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
+        <a href="https://kalanawijethunga.medium.com/" target="_blank" rel="noopener">Blog</a>
       </nav>
     </div>
   </header>
@@ -137,7 +187,8 @@
         <h1>Kalana Wijethunga</h1>
         <p class="role">AI Solution Architect</p>
         <p class="bio">Solution architect with 15+ years in software engineering, the last eight at architect level. I build agentic and GenAI solutions, from production LLM pipelines and RAG systems to agentic workflows. My focus is on adopting safe and secure AI practices across business and engineering.</p>
-        <p class="bio">Before that, my background was in cloud-based systems and enterprise integration. I've built event-driven, scalable and resilient cloud solutions and led cloud migration and modernisation work. I've worked directly with technology leadership and enterprise architecture groups at Australian, UK and US businesses. I hold a Bachelor's degree in Computer Science, an MSc in Cyber Security and a Stanford AI Professional Program certificate.</p>
+        <p class="bio">Before that, my background was in cloud-based systems and enterprise integration. I've built event-driven, scalable and resilient cloud solutions and led cloud migration and modernisation work. I've worked directly with technology leadership and enterprise architecture groups at Australian, UK and US businesses.</p> 
+        <p class="bio">I hold a Bachelor's degree in Computer Science, an MSc in Cyber Security and a Stanford AI Professional Program certificate.</p>
         <p class="skills">Agentic AI and multi-agent systems, RAG, LangGraph, Azure AI, Amazon Bedrock, cloud-native architecture on Azure and AWS, DevSecOps</p>
         <div class="socials">
           <a href="https://www.linkedin.com/in/kalanaw/">LinkedIn</a>
@@ -242,7 +293,7 @@
         <div class="entry">
           <h3>Certifications</h3>
           <ul class="list-plain">
-            <li>Certified Professional for Software Architecture, Foundation, iSAQB</li>
+            <li>Certified Professional for Software Architecture - Foundation, iSAQB</li>
             <li><a href="https://learn.microsoft.com/en-us/users/KalanaWijethunga-9822/credentials/3E976A75BAD1A99C">Microsoft Certified: Azure AI Engineer Associate</a> (2024)</li>
             <li><a href="https://learn.microsoft.com/en-us/users/KalanaWijethunga-9822/credentials/B3C0993D315A8E26">Microsoft Certified: Azure AI Fundamentals</a></li>
             <li><a href="https://www.coursera.org/account/accomplishments/specialization/2M1C47W8JFQN">Machine Learning Specialization</a>, DeepLearning.AI</li>
@@ -263,5 +314,6 @@
   </footer>
 
   <script src="assets/email.js"></script>
+  <script src="assets/header.js"></script>
 </body>
 </html>

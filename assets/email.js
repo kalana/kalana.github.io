@@ -4,9 +4,9 @@
   // encoding HTML uses for &#NNN; entities, and decoded here at runtime.
   // (HTML entities themselves are not decoded inside JavaScript strings,
   // so the codes are converted with String.fromCharCode instead.)
-  var userCodes = [107, 97, 108, 97, 110, 97, 115, 117, 112, 117, 110];
+  var userCodes = [104, 101, 108, 108, 111];
   var user = String.fromCharCode.apply(null, userCodes);
-  var domain = ["gmail", "com"].join(".");
+  var domain = ["kalanaw", "com"].join(".");
 
   var link = document.getElementById("email-link");
   if (link) {
